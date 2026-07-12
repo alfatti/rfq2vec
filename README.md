@@ -1,8 +1,6 @@
 # RFQ Foundation-Model Workspace
 
-This repository holds a scientific study of a simple question with a rarely
-available answer: **can transformer architectures learn a known data-generating
-process?** We simulate electronic credit-desk RFQ (request-for-quote) trading in
+ We simulate electronic credit-desk RFQ (request-for-quote) trading in
 investment-grade corporate bonds with a fully specified generative model, train
 decoder-only transformers on the simulated event stream, and grade what they
 recovered against the ground truth — the latent market state, the per-client
