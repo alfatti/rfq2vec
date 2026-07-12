@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rfqfm"
+version = "0.1.0"
+description = "Transaction foundation model over rfqsim RFQ output"
+requires-python = ">=3.10"
+# The torch-free core needs only these; it imports and runs (tokenize, pack,
+# entropy floor) on the data box with no training stack.
+dependencies = [
+    "numpy>=1.24",
+    "pyarrow>=14",
+    "pyyaml>=6",
+    "rfqsim",            # the simulator: imported only for enum registries
+]
+
+[project.optional-dependencies]
+# Installed on the GPU box for the model / data / train modules.
+train = [
+    "torch>=2.2",
+    "transformers>=4.53",
+]
+
+[tool.setuptools.packages.find]
+include = ["rfqfm*"]
